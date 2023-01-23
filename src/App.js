@@ -11,7 +11,9 @@ import Appbar from "./shared/Appbar/Appbar";
 
 function App() {
   return (
-    <Box>
+    <Box style={{
+        overflow: 'hidden'
+    }}>
         <CssBaseline />
         <Switch>
             <Route path="/">

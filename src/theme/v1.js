@@ -5,6 +5,15 @@ const theme = createTheme({
         MuiTypography: {
           variants: [
               {
+                  props: {variant: 'subTitle'},
+                  style: {
+                      letterSpacing: '-1px',
+                      fontWeight: 500,
+                      fontSize: '2.125rem',
+                      display: 'block'
+                  }
+              },
+              {
                   props: {variant: 'titleText'},
                   style: {
                       fontSize: '90px',
@@ -19,6 +28,15 @@ const theme = createTheme({
         },
         MuiButton: {
             variants: [
+                {
+                    props: { variant: 'link'},
+                    style: {
+                        textTransform: 'none',
+                        fontSize: '14px',
+                        fontWeight: '200',
+                        color: '#A68DFF'
+                    }
+                },
                 {
                     props: { variant: 'contained' },
                     style: {
