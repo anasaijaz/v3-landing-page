@@ -7,7 +7,9 @@ import MoneySVG from '../../assets/svg/icons/money.png'
 import ProfileSVG from '../../assets/svg/icons/profile.png'
 
 import EarnPNG from '../../assets/png/earn.png'
-import FSmartClubPNG from '../../assets/png/fsmartclub.png'
+import FSmartClubPNG from '../../assets/png/seed.svg'
+import SwapPNG from '../../assets/png/swap_content.svg'
+import HueBGSVG from '../../assets/svg/hue_bg.svg'
 
 // Sponsors
 import A from '../../assets/png/sponsors/1.png'
@@ -59,11 +61,31 @@ const Home = () => {
                         </Button>
 
                         <Button variant='outlined' size='large'>
-                            Learn more
+                            Learn More
                         </Button>
                     </Grid>
                     <Grid item xs={5} display='flex' justifyContent='center'>
-                        <Wrapper/>
+                        <Wrapper hidden>
+                            <iframe
+                                src="https://widget.onramper.com?color=924CEE&apiKey=pk_prod_fTeblOWrTrfUL0SmajuHmQTTg5ne0qqGwa9K9JlBcR00&defaultCrypto=ETH&defaultFiatSoft=USD&defaultAmount=50&recommendedCryptoCurrencies=ETH,BTC,MATIC,FTM,USDC,USDT&supportSwap=false"
+                                loading='lazy'
+                                height="595px"
+                                width="100%"
+                                title="Onramper widget"
+                                frameBorder="0"
+                                allow="accelerometer;
+                autoplay; camera; gyroscope; payment"
+                                style={{
+                                    boxShadow: "1px 1px 1px 1px black",
+                                    borderRadius: "20px",
+                                    backgroundColor: 'white',
+                                }}
+                            >
+                                <a href="https://widget.onramper.com" target="_blank">
+                                    Buy crypto
+                                </a>
+                            </iframe>
+                        </Wrapper>
                     </Grid>
                 </Grid>
             </Box>
@@ -85,7 +107,7 @@ const Home = () => {
                 <Wrapper height='auto'
                          overflow='hidden'
                          px={8} py={6} width='80%' showHue={false}>
-                    <Grid container>
+                    <Grid container alignItems='center'>
                         <Grid item display='flex' flexDirection='column' justifyContent='center'  xs={6}>
 
                             <Box>
@@ -104,7 +126,9 @@ const Home = () => {
                             </Box>
                         </Grid>
                         <Grid item xs>
-                            <Wrapper />
+                            <Wrapper hidden height='auto' width='65%'>
+                                <img src={SwapPNG} style={{margin: 'auto', display: 'block'}} width='240px'/>
+                            </Wrapper>
                         </Grid>
                     </Grid>
                 </Wrapper>
@@ -166,10 +190,9 @@ const Home = () => {
                             </Box>
                         </Grid>
                         <Grid item xs>
-                            <img src={FSmartClubPNG} style={{
-                                position: 'absolute',
-                                bottom: 0,
-                            }} width='500px'/>
+                            <Wrapper hidden height='auto' width='65%'>
+                                <img src={FSmartClubPNG} style={{margin: 'auto', display: 'block'}} width='240px'/>
+                            </Wrapper>
                         </Grid>
                     </Grid>
                 </Wrapper>
@@ -189,8 +212,8 @@ const Home = () => {
             </Box>
 
             <Box py={8}/>
-            <Box>
-                <Box display='flex' flexDirection='column' justifyContent='center'>
+            <Box >
+                <Box  display='flex' flexDirection='column' justifyContent='center'>
                     <Typography variant='subTitle' pb={3} textAlign='center'>
                         Featured Projects
                     </Typography>
@@ -207,13 +230,14 @@ const Home = () => {
                     </Box>
                 </Box>
 
-                <Wrapper width='100%' hidden={true} height='auto'>
-                    <Box display='flex' gap={3} py={5} justifyContent='center'>
-                        <img src={P1}/>
+                    <Box position='relative' display='flex' gap={3} py={5} justifyContent='center' >
                         <img src={P2}/>
                         <img src={P3}/>
+                        <img src={P1}/>
+                        <img src={HueBGSVG} style={{position: 'absolute', top: '50%',
+                            transform: 'translateY(-50%)',
+                        zIndex: -1}} width='150%' />
                     </Box>
-                </Wrapper>
             </Box>
 
             <Box py={4}/>
@@ -248,7 +272,7 @@ const Home = () => {
 const Stat = ({label, desc}) => {
     return (
         <Box>
-            <Typography variant='titleText' fontSize='48px' fontWeight={800} lineHeight='50px'>
+            <Typography variant='titleText' letterSpacing={'-1px'} fontSize='48px' fontWeight={700} lineHeight='50px'>
                 {label}
             </Typography>
             <Typography variant='body1'>

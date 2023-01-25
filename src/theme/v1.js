@@ -2,6 +2,13 @@ import {createTheme} from "@mui/material";
 
 const theme = createTheme({
     components: {
+        MuiToolbar: {
+            styleOverrides: {
+                root: {
+                    zIndex: 2000
+                }
+            }
+        },
         MuiTypography: {
           variants: [
               {
@@ -32,7 +39,7 @@ const theme = createTheme({
                     props: { variant: 'link'},
                     style: {
                         textTransform: 'none',
-                        fontSize: '14px',
+                        fontSize: '16px',
                         fontWeight: '200',
                         color: '#A68DFF'
                     }
@@ -63,7 +70,8 @@ const theme = createTheme({
                         fontWeight: 500,
                         paddingInline:  '30px',
                         borderRadius: '100px',
-                        border: '1px solid white'
+                        border: '1px solid white',
+                        textTransform: 'none'
                     }
                 }
             ]
@@ -76,6 +84,9 @@ const theme = createTheme({
         mode: 'dark',
         background: {
             default: '#000'
+        },
+        text: {
+            secondary: 'rgba(221, 221, 221, 1)'
         }
     }
 });

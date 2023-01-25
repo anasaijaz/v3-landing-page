@@ -1,7 +1,7 @@
 import React from 'react';
 import {AppBar, Box, Button, Toolbar, Typography} from "@mui/material";
-import Logo from '../../assets/svg/Logo.svg'
-
+import Logo from '../../assets/png/fs-logo.png'
+import {Link} from 'react-router-dom'
 
 
 // Appbar links
@@ -37,7 +37,7 @@ const Appbar = () => {
                 >
                     <Box
                     sx={{
-                        flexGrow: 2,
+                        flexGrow: 1,
                         my: 2
                     }}>
                    <img
@@ -52,11 +52,13 @@ const Appbar = () => {
                         gap={2.5}
                     >
                         {
-                            links.map(link => <Typography color='textPrimary' variant='subtitle1'>
+                            links.map(link => <Link to={link.to}>
+                            <Typography className='link' color='textPrimary' variant='subtitle1'>
                                 {
                                     link.label
                                 }
-                            </Typography>)
+                            </Typography>
+                            </Link>)
                         }
                     </Box>
 

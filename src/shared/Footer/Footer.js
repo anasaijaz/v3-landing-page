@@ -2,6 +2,7 @@ import React from 'react';
 import {Box, Button, Grid, Typography} from "@mui/material";
 import Logo from '../../assets/svg/Logo.svg'
 import Auditor from '../../assets/svg/icons/auditor.svg'
+import {Link} from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -31,8 +32,13 @@ const Footer = () => {
                     {
                         ["Swap", "Projects", "FSmart Club", "Shop"].map(text =>
                             <Typography gutterBottom color='textSecondary' variant='body2' fontSize='14px' fontWeight={300}>
+                                <Link to='https://google.com'>
+
                             {text}
-                        </Typography>)
+                                </Link>
+
+                        </Typography>
+                        )
                     }
                 </Grid>
                 <Grid xs={2} item>
@@ -40,7 +46,9 @@ const Footer = () => {
                         Company
                     </Typography>
                     {
-                        ["FAQ", "Litepaper", "Audit", "Scout Program", "Contact", "Contact", "Careers"].map(text =>
+                        [
+                            "FAQ", "Litepaper", "Audit", "Scout Program", "Contact", "Contact", "Careers"
+                        ].map(text =>
                             <Typography gutterBottom color='textSecondary' variant='body2' fontSize='14px' fontWeight={300}>
                                 {text}
                             </Typography>)
